@@ -1,0 +1,11 @@
+node_modules
+.output
+.nitro
+.wrangler
+dist
+.tanstack
+screenshots
+*.log
+.DS_Store
+.env
+.env.*

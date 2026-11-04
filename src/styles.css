@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-serif: "Fraunces", Georgia, serif;
+  --color-ink: #ecece8;
+  --color-muted: #8a9199;
+  --color-bg: #0a0c0e;
+  --color-panel: #15191e;
+  --color-well: #12161a;
+  --color-line: #2a323a;
+  --color-accent: #c8ccd2;
+  --color-accent-dim: #9aa3ab;
+  --color-on-accent: #0a0c0e;
+  --color-danger: #d27a72;
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  html,
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+  }
+}
+
+.studio[data-service="pd"][data-tone="dark"] {
+  --color-accent: #9bb6d4;
+  --color-accent-dim: #9bb6d4;
+  --color-on-accent: #0a0c0e;
+}
+.studio[data-service="pd"][data-tone="light"],
+.studio[data-service="sheriff"][data-tone="light"],
+.studio[data-service="parks"][data-tone="light"],
+.studio[data-service="military"][data-tone="light"] {
+  --color-bg: #f3f2ee;
+  --color-panel: #fbfaf7;
+  --color-well: #e7e4dc;
+  --color-ink: #1a1c1e;
+  --color-muted: #5c646c;
+  --color-line: #d5d1c8;
+  --color-on-accent: #fbfaf7;
+}
+.studio[data-service="pd"][data-tone="light"] {
+  --color-accent: #1e3148;
+  --color-accent-dim: #1e3148;
+}
+.studio[data-service="sheriff"][data-tone="dark"] {
+  --color-accent: #c4a36a;
+  --color-accent-dim: #c4a36a;
+  --color-on-accent: #1a160e;
+}
+.studio[data-service="sheriff"][data-tone="light"] {
+  --color-accent: #8a6230;
+  --color-accent-dim: #8a6230;
+}
+.studio[data-service="parks"][data-tone="dark"] {
+  --color-accent: #7dba8f;
+  --color-accent-dim: #7dba8f;
+  --color-on-accent: #0c1610;
+}
+.studio[data-service="parks"][data-tone="light"] {
+  --color-accent: #1f6b3a;
+  --color-accent-dim: #1f6b3a;
+}
+.studio[data-service="military"][data-tone="dark"] {
+  --color-accent: #a3b07a;
+  --color-accent-dim: #a3b07a;
+  --color-on-accent: #14160f;
+}
+.studio[data-service="military"][data-tone="light"] {
+  --color-accent: #4e5a32;
+  --color-accent-dim: #4e5a32;
+}
+
+.well-checker {
+  background-color: var(--color-bg);
+  background-image:
+    radial-gradient(circle at center, color-mix(in srgb, var(--color-well) 80%, transparent), transparent 70%),
+    linear-gradient(45deg, color-mix(in srgb, var(--color-line) 55%, transparent) 25%, transparent 25%),
+    linear-gradient(-45deg, color-mix(in srgb, var(--color-line) 55%, transparent) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, color-mix(in srgb, var(--color-line) 55%, transparent) 75%),
+    linear-gradient(-45deg, transparent 75%, color-mix(in srgb, var(--color-line) 55%, transparent) 75%);
+  background-size: auto, 16px 16px, 16px 16px, 16px 16px, 16px 16px;
+  background-position: center, 0 0, 0 8px, 8px -8px, -8px 0;
+}
